@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" fx:id="splash" prefHeight="237.0" prefWidth="448.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sibank.SplashFXMLController">
+   <children>
+      <ImageView fitHeight="208.0" fitWidth="393.0" layoutX="28.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@si%20bank%20transparente.png" />
+         </image>
+      </ImageView>
+      <ProgressBar fx:id="test" layoutX="28.0" layoutY="186.0" prefHeight="20.0" prefWidth="393.0" progress="0.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="430.0" prefWidth="591.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sibank.FXMLDocumentController">
+   <children>
+      <MenuBar prefHeight="29.0" prefWidth="591.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Arquivo">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Cadastrar Cliente" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Abrir uma nova Conta" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ferramentas">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Fechar Conta" />
+                  <Menu mnemonicParsing="false" text="Realizar Transações">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Realizar Deposito" />
+                        <MenuItem mnemonicParsing="false" text="Realizar  Saque" />
+                        <MenuItem mnemonicParsing="false" text="Realizar Transferência" />
+                    </items>
+                  </Menu>
+              <MenuItem mnemonicParsing="false" text="Remover Cliente  " />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Sobre" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Rectangle arcWidth="5.0" fill="#ffe51f" height="78.0" layoutY="36.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="591.0">
+         <effect>
+            <DropShadow height="10.0" radius="4.5" width="10.0" />
+         </effect>
+      </Rectangle>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="13.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@si%20bank%20transparente.png" />
+         </image>
+      </ImageView>
+      <TabPane layoutY="120.0" prefHeight="311.0" prefWidth="591.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Clientes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutY="-1.0" prefHeight="279.0" prefWidth="591.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                              <TableColumn prefWidth="75.0" text="Column X" />
+                              <TableColumn prefWidth="75.0" text="Column X" />
+                              <TableColumn prefWidth="75.0" text="Column X" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Contas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="278.0" prefWidth="591.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Transações">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="278.0" prefWidth="591.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
