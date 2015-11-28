@@ -8,6 +8,8 @@ package sibank;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
@@ -16,7 +18,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import static sibank.SiBank.primarystage;
 
 /**
@@ -35,15 +38,16 @@ public class SplashFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        splash_action();
+         splash_action();
+         test.setStyle("-fx-accent: red;");
     }  
-    public void splash_action() {
 
+    public void splash_action() {
+        primarystage.initStyle(StageStyle.TRANSPARENT);
         test.setVisible(true);
         Task task = createTask();
         test.progressProperty().bind(task.progressProperty());
         new Thread(task).start();
-
     }
     
     private Task<Void> createTask() {
@@ -64,21 +68,21 @@ public class SplashFXMLController implements Initializable {
                 }
                 Platform.runLater(new Runnable() {
                     @Override
-                    public void run() {
-                        Parent root = null;
+                    public void run() { 
+                        primarystage.close();
+                        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+                        Parent root1;
                         try {
-                            root = (Parent) FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+                            root1 = (Parent) fxmlLoader.load();
+                            Stage stage = new Stage();
+                            stage.setTitle("Si Bank");
+                            stage.setResizable(false);
+                            stage.setScene(new Scene(root1));  
+                            stage.show();
                         } catch (IOException ex) {
-
+                            Logger.getLogger(SplashFXMLController.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                        if (scene == null) {
-                            scene = new Scene(root);
-                            primarystage.setScene(scene);
-                        } else {
-                            primarystage.getScene().setRoot(root);
-                        }
-                        primarystage.show();
-                        
+                       
                     }
                 });
                 test.setVisible(false);

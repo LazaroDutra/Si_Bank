@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="404.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sibank.CadastroCFXMLController">
+   <children>
+      <Rectangle arcWidth="5.0" fill="#ffe51f" height="78.0" layoutX="6.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="451.0">
+         <effect>
+            <DropShadow height="10.0" radius="4.5" width="10.0" />
+         </effect>
+      </Rectangle>
+      <Label layoutX="64.0" layoutY="34.0" text="Cadastro de Clientes">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#bfbfbf" />
+                  <Stop color="#727272" offset="0.47374768435056136" />
+                  <Stop color="#0d0d0d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="12.0" layoutY="102.0" text="Cliente:" />
+      <Label layoutX="14.0" layoutY="129.0" text="Nome:" />
+      <TextField layoutX="14.0" layoutY="146.0" />
+      <Label layoutX="15.0" layoutY="180.0" text="C.P.F:" />
+      <TextField layoutX="14.0" layoutY="197.0" />
+      <Separator layoutY="245.0" prefHeight="4.0" prefWidth="451.0" />
+      <Label layoutX="240.0" layoutY="129.0" text="Data de Nascimento:" />
+      <DatePicker layoutX="240.0" layoutY="146.0" />
+      <Label layoutX="240.0" layoutY="180.0" text="EMail:" />
+      <TextField layoutX="240.0" layoutY="202.0" prefHeight="27.0" prefWidth="194.0" />
+      <Label layoutX="14.0" layoutY="260.0" text="Conta:" />
+      <Label layoutX="14.0" layoutY="289.0" text="Saldo Inicial:" />
+      <TextField layoutX="13.0" layoutY="306.0" />
+      <Label layoutX="240.0" layoutY="289.0" text="Data de Abertura:" />
+      <DatePicker layoutX="240.0" layoutY="306.0" />
+      <Button layoutX="309.0" layoutY="358.0" mnemonicParsing="false" text="Cadastrar Cliente" />
+      <Button layoutX="12.0" layoutY="358.0" mnemonicParsing="false" text="Cancelar" />
+   </children>
+</AnchorPane>

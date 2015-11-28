@@ -6,6 +6,8 @@
 package sibank;
 
 
+
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,12 +25,10 @@ public class SiBank extends Application {
         primarystage = stage; 
         Parent root = FXMLLoader.load(getClass().getResource("SplashFXML.fxml"));
         Scene scene = new Scene(root);
+        scene.setFill(null);
         stage.setScene(scene);
         stage.resizableProperty().set(false);
         stage.show();
-        
-        
-        
     }
 
     /**
@@ -36,6 +36,8 @@ public class SiBank extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+
+        
     }
-    
 }
+    
