@@ -10,8 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="259.0" prefWidth="462.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sibank.CadastroTFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="286.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sibank.CadastroTFXMLController">
    <children>
       <Rectangle arcWidth="5.0" fill="#ffe51f" height="78.0" layoutX="6.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="451.0">
          <effect>
@@ -32,15 +31,16 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ComboBox layoutX="6.0" layoutY="128.0" prefHeight="27.0" prefWidth="194.0" />
-      <Button layoutX="316.0" layoutY="220.0" mnemonicParsing="false" text="Efetuar Transação" />
-      <Button layoutX="6.0" layoutY="220.0" mnemonicParsing="false" text="Cancelar Transação" />
-      <TextField layoutX="254.0" layoutY="128.0" prefHeight="27.0" prefWidth="194.0" />
-      <TextField layoutX="6.0" layoutY="183.0" prefHeight="27.0" prefWidth="194.0" />
-      <DatePicker layoutX="254.0" layoutY="183.0" />
+      <ComboBox fx:id="tipo" layoutX="6.0" layoutY="128.0" prefHeight="27.0" prefWidth="194.0" />
+      <Button layoutX="286.0" layoutY="234.0" mnemonicParsing="false" text="Efetuar Transação" />
+      <util.MaskTextField fx:id="nConta" layoutX="254.0" layoutY="128.0" prefHeight="27.0" prefWidth="194.0" />
+      <util.MaskTextField fx:id="vTran" layoutX="6.0" layoutY="183.0" prefHeight="27.0" prefWidth="194.0" />
+      <DatePicker fx:id="data" layoutX="254.0" layoutY="183.0" />
       <Label layoutX="6.0" layoutY="111.0" text="Tipo de Transação:" />
       <Label layoutX="6.0" layoutY="166.0" text="Valor da Trasação:" />
       <Label layoutX="254.0" layoutY="111.0" text="Número da Conta:" />
       <Label layoutX="254.0" layoutY="166.0" text="Data da Transação:" />
+      <util.MaskTextField fx:id="tConta" layoutX="6.0" layoutY="236.0" prefHeight="27.0" prefWidth="194.0" />
+      <Label fx:id="tcon" layoutX="6.0" layoutY="220.0" text="Conta para transferência:" />
    </children>
 </AnchorPane>

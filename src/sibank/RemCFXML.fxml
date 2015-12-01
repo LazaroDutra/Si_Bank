@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sibank.RemCFXMLController">
-    
+<AnchorPane id="AnchorPane" prefHeight="255.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sibank.RemCFXMLController">
+   <children>
+      <Rectangle arcWidth="5.0" fill="#ffe51f" height="78.0" layoutX="6.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="451.0">
+         <effect>
+            <DropShadow height="10.0" radius="4.5" width="10.0" />
+         </effect>
+      </Rectangle>
+      <Label layoutX="98.0" layoutY="31.0" text="Remover Cliente">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+               <stops>
+                  <Stop color="#bfbfbf" />
+                  <Stop color="#727272" offset="0.47374768435056136" />
+                  <Stop color="#0d0d0d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="6.0" layoutY="100.0" text="C.P.F do Cliente:" />
+      <sibank.MaskField fx:id="cpf" layoutX="6.0" layoutY="117.0" />
+      <Button layoutX="196.0" layoutY="117.0" mnemonicParsing="false" text="Pesquisar" />
+      <TextField fx:id="nome" editable="false" layoutX="6.0" layoutY="197.0" />
+      <util.MaskTextField fx:id="nConta" editable="false" layoutX="196.0" layoutY="197.0" />
+      <Label layoutX="5.0" layoutY="180.0" text="Nome do Cliente:" />
+      <Label layoutX="196.0" layoutY="180.0" text="Número da Conta:" />
+      <Separator layoutY="162.0" prefHeight="0.0" prefWidth="462.0" />
+      <Button layoutX="375.0" layoutY="197.0" mnemonicParsing="false" text="Remover" />
+   </children>
 </AnchorPane>

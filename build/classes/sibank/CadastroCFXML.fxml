@@ -11,6 +11,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<!--<?import sibank.MaskField?>-->
+
 <AnchorPane id="AnchorPane" prefHeight="404.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sibank.CadastroCFXMLController">
    <children>
       <Rectangle arcWidth="5.0" fill="#ffe51f" height="78.0" layoutX="6.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="451.0">
@@ -34,20 +36,20 @@
       </Label>
       <Label layoutX="12.0" layoutY="102.0" text="Cliente:" />
       <Label layoutX="14.0" layoutY="129.0" text="Nome:" />
-      <TextField layoutX="14.0" layoutY="146.0" />
-      <Label layoutX="15.0" layoutY="180.0" text="C.P.F:" />
-      <TextField layoutX="14.0" layoutY="197.0" />
+      <TextField fx:id="nome" layoutX="14.0" layoutY="146.0" />
+      <Label layoutX="14.0" layoutY="185.0" text="C.P.F:" />
+      <sibank.MaskField fx:id="cpf" layoutX="14.0" layoutY="202.0" />
       <Separator layoutY="245.0" prefHeight="4.0" prefWidth="451.0" />
       <Label layoutX="240.0" layoutY="129.0" text="Data de Nascimento:" />
-      <DatePicker layoutX="240.0" layoutY="146.0" />
-      <Label layoutX="240.0" layoutY="180.0" text="EMail:" />
-      <TextField layoutX="240.0" layoutY="202.0" prefHeight="27.0" prefWidth="194.0" />
+      <DatePicker fx:id="dataNas" layoutX="240.0" layoutY="146.0" />
+      <Label layoutX="240.0" layoutY="185.0" text="EMail:" />
+      <TextField fx:id="email" layoutX="240.0" layoutY="202.0" prefHeight="27.0" prefWidth="194.0" />
       <Label layoutX="14.0" layoutY="260.0" text="Conta:" />
       <Label layoutX="14.0" layoutY="289.0" text="Saldo Inicial:" />
-      <TextField layoutX="13.0" layoutY="306.0" />
+      <util.MaskTextField fx:id="saldoini" layoutX="13.0" layoutY="306.0" />
       <Label layoutX="240.0" layoutY="289.0" text="Data de Abertura:" />
-      <DatePicker layoutX="240.0" layoutY="306.0" />
-      <Button layoutX="309.0" layoutY="358.0" mnemonicParsing="false" text="Cadastrar Cliente" />
-      <Button layoutX="12.0" layoutY="358.0" mnemonicParsing="false" text="Cancelar" />
+      <DatePicker fx:id="dataAb" layoutX="240.0" layoutY="306.0" />
+      <Button layoutX="309.0" layoutY="358.0" mnemonicParsing="false" onAction="#cad" text="Cadastrar Cliente" />
+      <Button fx:id="cancel" layoutX="12.0" layoutY="358.0" mnemonicParsing="false" onAction="#can" text="Cancelar" />
    </children>
 </AnchorPane>

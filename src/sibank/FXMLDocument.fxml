@@ -16,11 +16,13 @@
         <menus>
           <Menu mnemonicParsing="false" text="Arquivo">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#cadC" text="Cadastrar Cliente" />
+              <MenuItem fx:id="teste" mnemonicParsing="false" onAction="#cadC" text="Cadastrar Cliente" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Ferramentas">
             <items>
+                  <MenuItem mnemonicParsing="false" onAction="#altC" text="Alterar Cliente" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#cadT" text="Efetuar Transação" />
                   <SeparatorMenuItem mnemonicParsing="false" />
               <MenuItem mnemonicParsing="false" onAction="#remC" text="Remover Cliente  " />

@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import static sibank.SiBank.primarystage;
@@ -77,7 +78,8 @@ public class SplashFXMLController implements Initializable {
                             Stage stage = new Stage();
                             stage.setTitle("Si Bank");
                             stage.setResizable(false);
-                            stage.setScene(new Scene(root1));  
+                            stage.setScene(new Scene(root1));
+                            stage.getIcons().add(new Image("file:icon.png"));
                             stage.show();
                         } catch (IOException ex) {
                             Logger.getLogger(SplashFXMLController.class.getName()).log(Level.SEVERE, null, ex);

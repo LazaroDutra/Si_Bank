@@ -15,8 +15,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 /**
@@ -25,11 +26,23 @@ import javafx.stage.Stage;
  */
 public class FXMLDocumentController implements Initializable {
     
-
+    @FXML
+    private MenuItem teste;
     //Cadastrar Cliente
     @FXML
     private void cadC(ActionEvent cadC )  throws IOException {
          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CadastroCFXML.fxml"));
+         Parent root1 = (Parent) fxmlLoader.load();
+         Stage stage = new Stage();
+         stage.setTitle("Cadastro de  Clientes");
+         stage.setResizable(false);
+         stage.setScene(new Scene(root1));  
+         stage.show();
+    }
+    //Alterar Cliente
+    @FXML
+    private void altC(ActionEvent altC )  throws IOException {
+         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AlterarCFXML.fxml"));
          Parent root1 = (Parent) fxmlLoader.load();
          Stage stage = new Stage();
          stage.setTitle("Cadastro de  Clientes");
@@ -77,8 +90,9 @@ public class FXMLDocumentController implements Initializable {
          Parent root1 = (Parent) fxmlLoader.load();
          Stage stage = new Stage();
          stage.setTitle("Sobre");
-         stage.setResizable(false);
+         stage.initStyle(StageStyle.UNDECORATED);
          stage.setScene(new Scene(root1));  
+         
          stage.show();
     }
     
@@ -87,6 +101,7 @@ public class FXMLDocumentController implements Initializable {
         // TODO
         Connection conn;
         conn = new contest().conectar1();
+        teste.setStyle( "-fx-cell-hover-color: #0093ff;");
         if(conn != null){
                 System.out.println("Conexão efetuada com sucesso!"); 
             }else{
