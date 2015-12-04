@@ -49,7 +49,7 @@
       <util.MaskTextField fx:id="saldoini" layoutX="13.0" layoutY="306.0" />
       <Label layoutX="240.0" layoutY="289.0" text="Data de Abertura:" />
       <DatePicker fx:id="dataAb" layoutX="240.0" layoutY="306.0" />
-      <Button layoutX="309.0" layoutY="358.0" mnemonicParsing="false" onAction="#cad" text="Cadastrar Cliente" />
+      <Button layoutX="309.0" layoutY="358.0" mnemonicParsing="false" onAction="#cadastro" text="Cadastrar Cliente" />
       <Button fx:id="cancel" layoutX="12.0" layoutY="358.0" mnemonicParsing="false" onAction="#can" text="Cancelar" />
    </children>
 </AnchorPane>

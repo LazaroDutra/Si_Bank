@@ -31,7 +31,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <ComboBox fx:id="tipo" layoutX="6.0" layoutY="128.0" prefHeight="27.0" prefWidth="194.0" />
+      <ComboBox fx:id="tipo" layoutX="6.0" layoutY="128.0" onAction="#det" prefHeight="27.0" prefWidth="194.0" />
       <Button layoutX="286.0" layoutY="234.0" mnemonicParsing="false" text="Efetuar Transação" />
       <util.MaskTextField fx:id="nConta" layoutX="254.0" layoutY="128.0" prefHeight="27.0" prefWidth="194.0" />
       <util.MaskTextField fx:id="vTran" layoutX="6.0" layoutY="183.0" prefHeight="27.0" prefWidth="194.0" />

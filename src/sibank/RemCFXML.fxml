@@ -33,12 +33,12 @@
       </Label>
       <Label layoutX="6.0" layoutY="100.0" text="C.P.F do Cliente:" />
       <sibank.MaskField fx:id="cpf" layoutX="6.0" layoutY="117.0" />
-      <Button layoutX="196.0" layoutY="117.0" mnemonicParsing="false" text="Pesquisar" />
+      <Button layoutX="196.0" layoutY="117.0" mnemonicParsing="false" onAction="#pesq" text="Pesquisar" />
       <TextField fx:id="nome" editable="false" layoutX="6.0" layoutY="197.0" />
-      <util.MaskTextField fx:id="nConta" editable="false" layoutX="196.0" layoutY="197.0" />
+      <TextField fx:id="nConta" editable="false" layoutX="196.0" layoutY="197.0" />
       <Label layoutX="5.0" layoutY="180.0" text="Nome do Cliente:" />
       <Label layoutX="196.0" layoutY="180.0" text="Número da Conta:" />
       <Separator layoutY="162.0" prefHeight="0.0" prefWidth="462.0" />
-      <Button layoutX="375.0" layoutY="197.0" mnemonicParsing="false" text="Remover" />
+      <Button layoutX="375.0" layoutY="197.0" mnemonicParsing="false" onAction="#rem" text="Remover" />
    </children>
 </AnchorPane>

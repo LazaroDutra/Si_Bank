@@ -41,9 +41,9 @@
       <DatePicker fx:id="dataNas" layoutX="243.0" layoutY="210.0" />
       <Label layoutX="243.0" layoutY="249.0" text="EMail:" />
       <TextField fx:id="email" layoutX="243.0" layoutY="266.0" prefHeight="27.0" prefWidth="194.0" />
-      <Button layoutX="312.0" layoutY="318.0" mnemonicParsing="false" text="Efetuar Alteração" />
+      <Button layoutX="312.0" layoutY="318.0" mnemonicParsing="false" onAction="#alterar" text="Efetuar Alteração" />
       <sibank.MaskField fx:id="cpfp" layoutX="17.0" layoutY="124.0" />
       <Label layoutX="17.0" layoutY="107.0" text="C.P.F do Cliente:" />
-      <Button layoutX="241.0" layoutY="124.0" mnemonicParsing="false" text="Pesquisar" />
+      <Button layoutX="241.0" layoutY="124.0" mnemonicParsing="false" onAction="#pesq" text="Pesquisar" />
    </children>
 </AnchorPane>

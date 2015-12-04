@@ -7,6 +7,8 @@ package sibank;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -38,10 +40,15 @@ public class CadastroTFXMLController implements Initializable {
     private MaskTextField tConta;
     @FXML
     private Label tcon;
-
+    private ObservableList tip;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        tip = FXCollections.observableArrayList();
+        tip.add("Depósito");
+        tip.add("Saque");
+        tip.add("Transferência");
+        tipo.setItems(tip);
         nConta.setMask("N!");
         nConta.setPromptText("Insira o número da conta");
         vTran.setMask("N!,N!");
@@ -50,6 +57,17 @@ public class CadastroTFXMLController implements Initializable {
         tConta.setPromptText("Conta que receberar Transferência");
         tConta.setDisable(true);
         tcon.setDisable(true);
-    }    
+    }
+    
+    @FXML
+    private void det(){
+        if("Transferência".equals(tipo.getValue().toString())){
+            tConta.setDisable(false);
+            tcon.setDisable(false);
+        }else{
+            tConta.setDisable(true);
+            tcon.setDisable(true);
+        }
+    }
     
 }

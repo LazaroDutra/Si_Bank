@@ -7,7 +7,10 @@ package sibank;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
+import util.MaskTextField;
 
 /**
  * FXML Controller class
@@ -18,10 +21,18 @@ public class ExtratoFXMLController implements Initializable {
 
     /**
      * Initializes the controller class.
-     */
+     */    
+    @FXML
+    private DatePicker datai;
+    @FXML
+    private DatePicker dataf;
+    @FXML
+    private MaskTextField conta;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+       conta.setMask("N!");
     }    
     
 }

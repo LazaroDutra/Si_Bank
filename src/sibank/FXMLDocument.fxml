@@ -16,6 +16,8 @@
         <menus>
           <Menu mnemonicParsing="false" text="Arquivo">
             <items>
+                  <MenuItem mnemonicParsing="false" onAction="#adt" text="Atualizar Tabelas" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
               <MenuItem fx:id="teste" mnemonicParsing="false" onAction="#cadC" text="Cadastrar Cliente" />
             </items>
           </Menu>
@@ -25,9 +27,9 @@
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem mnemonicParsing="false" onAction="#cadT" text="Efetuar Transação" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-              <MenuItem mnemonicParsing="false" onAction="#remC" text="Remover Cliente  " />
+                  <MenuItem mnemonicParsing="false" onAction="#proC" text="Procurar por Cliente" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" onAction="#remT" text="Remover Transação" />
+              <MenuItem mnemonicParsing="false" onAction="#remC" text="Remover Cliente  " />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Ajuda">
@@ -49,49 +51,49 @@
       </ImageView>
       <TabPane layoutY="120.0" prefHeight="311.0" prefWidth="591.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Clientes">
+          <Tab onSelectionChanged="#adt" text="Clientes">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutY="-1.0" prefHeight="279.0" prefWidth="591.0">
+                        <TableView fx:id="clientes" prefHeight="278.0" prefWidth="591.0">
                           <columns>
-                            <TableColumn minWidth="7.0" prefWidth="43.0" text="ID" />
-                            <TableColumn prefWidth="243.0" text="Nome" />
-                              <TableColumn prefWidth="182.0" text="C.P.F" />
-                              <TableColumn prefWidth="122.0" text="Número da Conta" />
+                            <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="nome" prefWidth="222.0" text="Cliente" />
+                              <TableColumn fx:id="cpf" prefWidth="157.0" text="C.P.F" />
+                              <TableColumn fx:id="nconta" prefWidth="127.0" text="Número da Conta" />
                           </columns>
                         </TableView>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Contas">
+          <Tab onSelectionChanged="#adt" text="Contas">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="278.0" prefWidth="591.0">
+                        <TableView fx:id="contas" prefHeight="278.0" prefWidth="591.0">
                           <columns>
-                            <TableColumn prefWidth="121.0" text="Número da Conta" />
-                            <TableColumn prefWidth="104.0" text="Saldo" />
-                              <TableColumn prefWidth="205.0" text="Cliente" />
-                              <TableColumn prefWidth="160.0" text="Data de Abertura" />
+                            <TableColumn fx:id="numconta" prefWidth="121.0" text="Número da Conta" />
+                            <TableColumn fx:id="saldo" prefWidth="104.0" text="Saldo R$" />
+                              <TableColumn fx:id="cli" prefWidth="185.0" text="Cliente" />
+                              <TableColumn fx:id="datAb" prefWidth="170.0" text="Data de Abertura" />
                           </columns>
                         </TableView>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-            <Tab text="Transações">
+            <Tab onSelectionChanged="#adt" text="Transações">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="278.0" prefWidth="591.0">
+                        <TableView fx:id="transacoes" prefHeight="278.0" prefWidth="591.0">
                           <columns>
-                            <TableColumn prefWidth="37.0" text="ID" />
-                            <TableColumn prefWidth="136.0" text="Data da Transação" />
-                              <TableColumn prefWidth="136.0" text="Valor da Transação" />
-                              <TableColumn prefWidth="130.0" text="Número da Conta" />
-                              <TableColumn prefWidth="151.0" text="Saldo Anterior " />
+                            <TableColumn fx:id="idt" prefWidth="37.0" text="ID" />
+                            <TableColumn fx:id="datat" prefWidth="136.0" text="Data da Transação" />
+                              <TableColumn fx:id="vt" prefWidth="136.0" text="Valor da Transação" />
+                              <TableColumn fx:id="nuconta" prefWidth="130.0" text="Número da Conta" />
+                              <TableColumn fx:id="saldoant" prefWidth="151.0" text="Saldo Anterior " />
                           </columns>
                         </TableView>
                      </children>
