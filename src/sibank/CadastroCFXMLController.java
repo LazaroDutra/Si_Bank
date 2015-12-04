@@ -88,6 +88,7 @@ public class CadastroCFXMLController implements Initializable {
                 nome.setText(null);
                 dataNas.setValue(null);
                 dataAb.setValue(null);
+                email.setText(null);
                 saldoini.setText("");
                 }catch(NumberFormatException | SQLException e){}
         }
