@@ -147,8 +147,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TableColumn nuconta;
     @FXML
-    private TableColumn saldoant;
+    private TableColumn tipo;
     
+    private ObservableList<Transacao>Transacoes;
     /////////////////////////////
     
     
@@ -168,6 +169,7 @@ public class FXMLDocumentController implements Initializable {
          contest conn = new contest();
          Clientes = FXCollections.observableArrayList();
          Contas = FXCollections.observableArrayList();
+         Transacoes = FXCollections.observableArrayList();
          assert clientes != null :"fx:id=\"tableview\" was not injected: check your FXML file 'UserMaster.fxml'.";
          assert contas != null :"fx:id=\"tableview\" was not injected: check your FXML file 'UserMaster.fxml'.";
          assert transacoes != null :"fx:id=\"tableview\" was not injected: check your FXML file 'UserMaster.fxml'.";
@@ -210,6 +212,29 @@ public class FXMLDocumentController implements Initializable {
              datAb.setCellValueFactory( new PropertyValueFactory("daAbertura"));
              contas.setItems(null);
              contas.setItems(Contas);
+             ////////////////////////////////////////////////////////////////////////////
+             
+             //Tabela Transações
+             Statement st2 = conn.conectar1().createStatement();
+             ResultSet rs2 = st2.executeQuery("SELECT transacoes.id_movimentacao,transacoes.numeroconta,transacoes.valor,tipomov.descricao,transacoes.data FROM transacoes,tipomov,conta WHERE transacoes.numeroconta=conta.numeroconta and tipomov.id_tipo=transacoes.id_tipo ORDER BY `transacoes`.`id_movimentacao` ASC");
+             while(rs2.next()){
+                 Transacao tr = new Transacao(0,0,0,"","");
+                 tr.setIdMov(rs2.getInt("id_movimentacao"));
+                 tr.setValorMov(rs2.getInt("valor"));
+                 tr.setNumConta(rs2.getInt("numeroconta"));
+                 tr.setTipoMov(rs2.getString("tipomov.descricao"));
+                 tr.setDataMov(rs2.getString("data"));
+                 tr.imp(tr);
+                 Transacoes.add(tr);
+             }
+             idt.setCellValueFactory( new PropertyValueFactory("idMov"));
+             nuconta.setCellValueFactory( new PropertyValueFactory("numConta"));
+             vt.setCellValueFactory( new PropertyValueFactory("valorMov"));
+             tipo.setCellValueFactory(new PropertyValueFactory("tipoMov"));
+             datat.setCellValueFactory( new PropertyValueFactory("dataMov"));
+             
+             transacoes.setItems(null);
+             transacoes.setItems(Transacoes);
          }catch (SQLException ex) {}
      }
     }    

@@ -90,10 +90,10 @@
                         <TableView fx:id="transacoes" prefHeight="278.0" prefWidth="591.0">
                           <columns>
                             <TableColumn fx:id="idt" prefWidth="37.0" text="ID" />
-                            <TableColumn fx:id="datat" prefWidth="136.0" text="Data da Transação" />
-                              <TableColumn fx:id="vt" prefWidth="136.0" text="Valor da Transação" />
-                              <TableColumn fx:id="nuconta" prefWidth="130.0" text="Número da Conta" />
-                              <TableColumn fx:id="saldoant" prefWidth="151.0" text="Saldo Anterior " />
+                              <TableColumn fx:id="tipo" prefWidth="136.0" text="Tipo" />
+                            <TableColumn fx:id="nuconta" prefWidth="136.0" text="Número da Conta" />
+                              <TableColumn fx:id="vt" prefWidth="130.0" text="Valor" />
+                              <TableColumn fx:id="datat" prefWidth="151.0" text="Data da Transação" />
                           </columns>
                         </TableView>
                      </children>

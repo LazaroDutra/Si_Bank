@@ -121,7 +121,7 @@ public class CadastroCFXMLController implements Initializable {
            co.setIdCliente(id);
            co.imprime(co);
            Statement insert1 = conn.conectar1().createStatement();
-           String in = "INSERT INTO conta (numeroconta, saldo, data_abertura, id_cliente)  VALUES (NULL,'"+co.getSaConta()+"','"+co.getDaAbertura()+"','"+co.getIdCliente()+"');";
+           String in = "INSERT INTO conta (numeroconta, saldo, data_abertura, id_cliente)  VALUES (NULL,'"+Float.valueOf(saldoini.getText())+"','"+String.valueOf(dataAb.getValue())+"','"+id+"');";
            insert1.executeUpdate(in);
         }catch(SQLException e){
             System.out.println("Problema com o SQL: "+e);

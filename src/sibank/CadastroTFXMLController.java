@@ -6,11 +6,15 @@
 package sibank;
 
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -68,6 +72,90 @@ public class CadastroTFXMLController implements Initializable {
             tConta.setDisable(true);
             tcon.setDisable(true);
         }
+    }
+    @FXML
+    private void tran(){
+        float sa =0, vt = vt = Float.parseFloat(vTran.getText());
+        
+        contest conn = new contest();
+        if("Depósito".equals(tipo.getValue().toString())){
+            try{
+                Statement st = conn.conectar1().createStatement();
+                String dep = "Call faz_deposito("+vTran.getText()+","+nConta.getText()+" )";
+                st.executeQuery(dep);
+               
+                Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+                dialogoInfo.setTitle("Efetuar Transação");
+                dialogoInfo.setHeaderText("Transação concluida");
+                dialogoInfo.setContentText("Transação efetuada com sucesso.");
+                dialogoInfo.showAndWait();
+                zera();
+            }catch(SQLException e){}
+        }
+        if("Saque".equals(tipo.getValue().toString())){
+             try{
+                Statement sts = conn.conectar1().createStatement();
+                ResultSet rs = sts.executeQuery("Select saldo from conta where numeroconta = "+nConta.getText()+"");
+                while(rs.next()){
+                    sa = rs.getFloat("saldo");
+                    System.out.println(sa);
+                }
+                if(vt <= sa){
+                    Statement st = conn.conectar1().createStatement();
+                    String dep = "Call faz_saque('"+vTran.getText()+"','"+nConta.getText()+"')";
+                    st.executeQuery(dep);
+                    
+                    Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+                    dialogoInfo.setTitle("Efetuar Transação");
+                    dialogoInfo.setHeaderText("Transação concluida");
+                    dialogoInfo.setContentText("Transação efetuada com sucesso.");
+                    dialogoInfo.showAndWait();
+                    zera();
+                }else{
+                    Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+                    dialogoInfo.setTitle("Efetuar Transação");
+                    dialogoInfo.setHeaderText("Transação não efetuada");
+                    dialogoInfo.setContentText("Saldo insuficiente");
+                    dialogoInfo.showAndWait();
+                }
+            }catch(SQLException e){}
+        }
+        if("Transferência".equals(tipo.getValue().toString())){
+             try{
+                Statement sts = conn.conectar1().createStatement();
+                ResultSet rs = sts.executeQuery("Select saldo from conta where numeroconta = "+nConta.getText()+"");
+                while(rs.next()){
+                    sa = rs.getFloat("saldo");
+                    System.out.println(sa);
+                }
+                if(vt <= sa){
+                    Statement st = conn.conectar1().createStatement();
+                    String dep = "Call faz_transferencia('"+nConta.getText()+"', '"+vTran.getText()+"', '"+tConta.getText()+"')";
+                    st.executeQuery(dep);
+                
+                    Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+                    dialogoInfo.setTitle("Efetuar Transação");
+                    dialogoInfo.setHeaderText("Transação concluida");
+                    dialogoInfo.setContentText("Transação efetuada com sucesso.");
+                    dialogoInfo.showAndWait();
+                    zera();
+                }else{
+                    Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+                    dialogoInfo.setTitle("Efetuar Transação");
+                    dialogoInfo.setHeaderText("Transação não efetuada");
+                    dialogoInfo.setContentText("Saldo insuficiente");
+                    dialogoInfo.showAndWait();
+                }
+            }catch(SQLException e){}
+        }
+        
+    }
+    
+    private void zera(){
+        nConta.setText("");
+        vTran.setText("");
+        tConta.setText("");
+        tipo.setValue(null);
     }
     
 }

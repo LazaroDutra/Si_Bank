@@ -8,20 +8,21 @@
 
 <AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="552.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sibank.ExtratoFXMLController">
    <children>
-      <TableView layoutX="14.0" layoutY="111.0" prefHeight="368.0" prefWidth="526.0" style="-fx-background-color: #ffe51f;">
+      <TableView fx:id="transacoes" layoutX="14.0" layoutY="111.0" prefHeight="368.0" prefWidth="526.0" style="-fx-background-color: #ffe51f;">
         <columns>
-          <TableColumn prefWidth="31.0" text="ID" />
-          <TableColumn prefWidth="194.0" text="Tipo" />
-            <TableColumn prefWidth="147.0" text="Valor" />
-            <TableColumn prefWidth="153.0" text="Data" />
+          <TableColumn fx:id="idt" prefWidth="31.0" text="ID" />
+          <TableColumn fx:id="tipo" prefWidth="103.0" text="Tipo" />
+            <TableColumn fx:id="saldoant" prefWidth="118.0" text="Saldo Anterior" />
+            <TableColumn fx:id="vt" prefWidth="141.0" text="Valor da Transação" />
+            <TableColumn fx:id="datat" prefWidth="130.0" text="Data" />
         </columns>
       </TableView>
-      <DatePicker layoutX="238.0" layoutY="25.0" />
-      <DatePicker layoutX="32.0" layoutY="77.0" />
-      <Button layoutX="239.0" layoutY="77.0" prefHeight="27.0" prefWidth="80.0" text="Extrato" />
+      <DatePicker fx:id="datai" layoutX="238.0" layoutY="25.0" />
+      <DatePicker fx:id="dataf" layoutX="32.0" layoutY="77.0" />
+      <Button layoutX="239.0" layoutY="77.0" onAction="#ext" prefHeight="27.0" prefWidth="80.0" text="Extrato" />
       <Label layoutX="239.0" layoutY="8.0" text="Data Inicial:" />
       <Label layoutX="32.0" layoutY="60.0" text="Data Final:" />
-      <util.MaskTextField fx:id="conta"  layoutX="32.0" layoutY="25.0" prefHeight="27.0" prefWidth="194.0" />
+      <util.MaskTextField fx:id="conta" layoutX="32.0" layoutY="25.0" prefHeight="27.0" prefWidth="194.0" />
       <Label layoutX="32.0" layoutY="8.0" text="Número da Conta:" />
    </children>
 </AnchorPane>

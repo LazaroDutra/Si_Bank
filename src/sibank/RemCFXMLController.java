@@ -53,6 +53,7 @@ public class RemCFXMLController implements Initializable {
             ResultSet rs1 = st1.executeQuery("Select numeroconta From conta where conta.id_cliente = '"+idcli+"'; ");
             while(rs1.next()){
                 nConta.setText(rs1.getString("numeroconta"));
+                cont = rs1.getString("numeroconta");
             }
         }catch(SQLException e ){}
     }
